@@ -58,11 +58,7 @@ class MyWindow(QtWidgets.QWidget,Ui_Form):
                     time.sleep(0.01)
                 self.pushButton_1.setText('錯誤')
         else:
-            self.lineEdit.clear()
-            self.lineEdit_1.clear()
-            self.label_3.clear()
-            self.progressBar.setValue(0)
-            self.pushButton_1.setText('下載')
+            self.re()
 
     def done(self):
         self.pushButton_1.setText('完成')
