@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt
 from pytube import YouTube
 from UI import Ui_Form
 import requests
+import time
 import sys
 import os
 
@@ -42,7 +43,13 @@ class MyWindow(QtWidgets.QWidget,Ui_Form):
         if self.pushButton_1.text() == '下載':
             self.progressBar.setValue(1)
             name=self.lineEdit_1.text()#encoding="utf-8-sig"
-            self.yt.streams.filter().get_highest_resolution().download(self.label_2.text(),filename=name+'.mp4')
+            try:
+                self.yt.streams.filter().get_highest_resolution().download(self.label_2.text(),filename=name+'.mp4')
+            except:
+                for i in range(0,102,2):
+                    self.progressBar.setValue(i)
+                    time.sleep(0.01)
+                self.pushButton_1.setText('錯誤')
         else:
             self.lineEdit.clear()
             self.lineEdit_1.clear()
