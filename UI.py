@@ -46,7 +46,7 @@ class Ui_Form(object):
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.lineEdit = QtWidgets.QLineEdit(self.frame_5)
-        self.lineEdit.setGeometry(QtCore.QRect(60, 10, 211, 31))
+        self.lineEdit.setGeometry(QtCore.QRect(60, 10, 171, 31))
         font = QtGui.QFont()
         font.setFamily("微軟正黑體")
         font.setPointSize(12)
@@ -63,6 +63,13 @@ class Ui_Form(object):
         self.label_3.setGeometry(QtCore.QRect(10, 50, 261, 191))
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
+        self.pushButton_2 = QtWidgets.QPushButton(self.frame_5)
+        self.pushButton_2.setGeometry(QtCore.QRect(240, 12, 31, 31))
+        font = QtGui.QFont()
+        font.setFamily("Nova Round")
+        font.setPointSize(12)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_1 = QtWidgets.QPushButton(Form)
         self.pushButton_1.setGeometry(QtCore.QRect(200, 350, 91, 31))
         font = QtGui.QFont()
@@ -81,6 +88,7 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(Form.open_file) # type: ignore
         self.pushButton_1.clicked.connect(Form.download) # type: ignore
+        self.pushButton_2.clicked.connect(Form.re)
         self.lineEdit.textChanged.connect(Form.url_in)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -91,3 +99,4 @@ class Ui_Form(object):
         self.label_2.setText(_translate("Form", "預設路徑："))
         self.label.setText(_translate("Form", "網址"))
         self.pushButton_1.setText(_translate("Form", "下載"))
+        self.pushButton_2.setText(_translate("Form", "R"))

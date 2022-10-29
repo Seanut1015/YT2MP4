@@ -38,7 +38,14 @@ class MyWindow(QtWidgets.QWidget,Ui_Form):
             photo = QPixmap()
             photo.loadFromData(req.content)
             self.label_3.setPixmap(photo.scaled(self.label_3.size(),aspectRatioMode=Qt.KeepAspectRatio))
-        
+            self.lineEdit.setReadOnly(1)
+    def re(self):
+        self.lineEdit.clear()
+        self.lineEdit_1.clear()
+        self.label_3.clear()
+        self.progressBar.setValue(0)
+        self.pushButton_1.setText('下載')
+        self.lineEdit.setReadOnly(0)
     def download(self):
         if self.pushButton_1.text() == '下載':
             self.progressBar.setValue(1)
