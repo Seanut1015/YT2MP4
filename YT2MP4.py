@@ -1,6 +1,6 @@
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtWidgets
-from pytube import YouTube
+from pytubefix import YouTube
 from PyQt5.QtCore import Qt
 from UI import Ui_Form
 from requests import get
